@@ -2,9 +2,11 @@
 
   <v-app>
 
-
-        <dashboard-stats></dashboard-stats>
-        <dashboard-table></dashboard-table>
+<v-card>
+  <v-card-title>
+    About us
+  </v-card-title>
+</v-card>
 
         <!-- If using vue-router -->
         <router-view></router-view>
@@ -14,9 +16,8 @@
 
 </template>
 <script>
-import DashboardStats from "@/components/dashboard-stats";
-import DashboardTable from "@/components/dashboard-table";
+
 export default {
-  components: {DashboardTable, DashboardStats}
+  components: {}
 }
 </script>

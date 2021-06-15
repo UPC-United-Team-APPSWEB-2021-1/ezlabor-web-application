@@ -1,5 +1,8 @@
 <template>
  <v-card>
+   <v-card-title>
+     Create a new offer
+   </v-card-title>
 
  </v-card>
 </template>

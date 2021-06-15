@@ -84,7 +84,7 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
+      { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/dashboard' },
       { title: 'Search', icon: 'mdi-account-search', to: '/search' },
       { title: 'Create', icon: 'mdi-briefcase-plus', to: '/create' },
       { title: 'About', icon: 'mdi-information', to: '/about' },

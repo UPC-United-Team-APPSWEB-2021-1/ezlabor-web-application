@@ -1,6 +1,9 @@
 <template>
 
   <v-card>
+    <v-card-title>
+      Search new offers
+    </v-card-title>
 
   </v-card>
 </template>
