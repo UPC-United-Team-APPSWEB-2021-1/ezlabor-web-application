@@ -7,7 +7,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
-            Application
+            <h2>EZLabor</h2>
           </v-list-item-title>
           <v-list-item-subtitle>
             subtext
@@ -84,10 +84,10 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
-      { title: 'Photos', icon: 'mdi-image', to: '/photos' },
-      { title: 'About', icon: 'mdi-help-box', to: '/about' },
-      { title: 'Search', icon: 'mdi-magnify', to: '/search' },
+      { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/dashboard' },
+      { title: 'Search', icon: 'mdi-account-search', to: '/search' },
+      { title: 'Create', icon: 'mdi-briefcase-plus', to: '/create' },
+      { title: 'About', icon: 'mdi-information', to: '/about' },
     ],
     right: null,
 
