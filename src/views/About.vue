@@ -1,5 +1,22 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+
+  <v-app>
+
+
+        <dashboard-stats></dashboard-stats>
+        <dashboard-table></dashboard-table>
+
+        <!-- If using vue-router -->
+        <router-view></router-view>
+
+  </v-app>
+
+
 </template>
+<script>
+import DashboardStats from "@/components/dashboard-stats";
+import DashboardTable from "@/components/dashboard-table";
+export default {
+  components: {DashboardTable, DashboardStats}
+}
+</script>
