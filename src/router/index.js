@@ -45,7 +45,7 @@ const routes = [
   {
     path: '/postulations',
     name: 'postulations',
-    component: () => import('../views/Postulations.vue')
+    component: () => import('../views/Postulation.vue')
   }
 ]
 
