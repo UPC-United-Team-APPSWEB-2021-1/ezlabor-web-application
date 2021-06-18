@@ -1,24 +1,16 @@
-<template>
-  <v-card>
-    <v-card-title>
-      Search new offers
-    </v-card-title>
-    <v-card-text>
-      <offers></offers>
-    </v-card-text>
-  </v-card>
+
+  <v-app>
+    <offers></offers>
+  </v-app>
+
+
 </template>
 
 <script>
-import offers from "@/components/offers";
+import Offers from "@/components/offers-search";
 export default {
-  name: "Search",
-  components: {
-    offers
+name: "Search",
+ components: {
+    Offers
   }
-}
-</script>
-
-<style scoped>
-
-</style>
+};
