@@ -14,7 +14,6 @@
     <v-card-text>
       <v-data-iterator
           :items="displayOffers"
-          :items-per-page="5"
           :search="search"
           hide-default-footer
           ref="offersTable">
@@ -313,7 +312,4 @@ export default {
 </script>
 
 <style scoped>
-.offer-card {
-  elevation: "6";
-}
 </style>
