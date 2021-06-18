@@ -1,4 +1,4 @@
-<template>
+
   <v-app>
     <offers></offers>
   </v-app>
@@ -14,9 +14,3 @@ name: "Search",
     Offers
   }
 };
-
-</script>
-
-<style scoped>
-
-</style>
