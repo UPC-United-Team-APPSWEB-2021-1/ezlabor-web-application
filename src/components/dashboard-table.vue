@@ -2,7 +2,7 @@
   <v-card width="600" class="mx-auto mt-5" >
     <v-card-title> <h2>Ofertas pendientes</h2> </v-card-title>
 
-    <v-simple-table >
+    <v-simple-table fixed-header>
       <template v-slot:default>
         <thead>
         <tr>
@@ -41,39 +41,7 @@ name: "dashboard-table",
         {
           name: 'Ice cream sandwich',
           calories: 237,
-        },
-        {
-          name: 'Eclair',
-          calories: 262,
-        },
-        {
-          name: 'Cupcake',
-          calories: 305,
-        },
-        {
-          name: 'Gingerbread',
-          calories: 356,
-        },
-        {
-          name: 'Jelly bean',
-          calories: 375,
-        },
-        {
-          name: 'Lollipop',
-          calories: 392,
-        },
-        {
-          name: 'Honeycomb',
-          calories: 408,
-        },
-        {
-          name: 'Donut',
-          calories: 452,
-        },
-        {
-          name: 'KitKat',
-          calories: 518,
-        },
+        }
       ],
     }
   },
