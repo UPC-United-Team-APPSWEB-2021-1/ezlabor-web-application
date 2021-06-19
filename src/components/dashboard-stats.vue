@@ -6,31 +6,56 @@
           :key="card.title"
           :cols="card.flex"
       >
-        <v-card>
-          <v-img
-              :src="card.src"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-          >
-            <v-card-title v-text="card.title"></v-card-title>
-          </v-img>
+        <v-card elevation="10" class="mx-auto" >
+          <v-card-title v-text="card.title">
+          </v-card-title>
 
+          <v-card-text>
+            <div>Word of the Day</div>
+            <p class="text-h4 text--primary" v-text="card.num">
+
+            </p>
+            <p>adjective</p>
+            <div class="text--primary">
+              relating to or dependent on charity; charitable.<br>
+              "an eleemosynary educational institution."
+            </div>
+          </v-card-text>
           <v-card-actions>
-            <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
-
-            <v-btn icon>
-              <v-icon>mdi-bookmark</v-icon>
-            </v-btn>
-
-            <v-btn icon>
-              <v-icon>mdi-share-variant</v-icon>
+            <v-btn
+                text
+                color="teal accent-4"
+                @click="card.reveal = true"
+            >
+              Ver más
             </v-btn>
           </v-card-actions>
+
+          <v-expand-transition>
+            <v-card
+                v-if="card.reveal"
+                class="transition-fast-in-fast-out v-card--reveal"
+                style="height: 100%;"
+            >
+              <v-card-text class="pb-0">
+                <p class="text-h4 text--primary">
+                  Origin
+                </p>
+                <p>late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’ </p>
+              </v-card-text>
+              <v-card-actions class="pt-0">
+                <v-btn
+                    text
+                    color="teal accent-4"
+                    @click="card.reveal = false"
+                >
+                  Close
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-expand-transition>
+
+
         </v-card>
       </v-col>
     </v-row>
@@ -42,14 +67,14 @@ export default {
 name: "dashboard-stats",
 
   data: () => ({
+
     cards: [
-      { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 4 },
-      { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 4 },
-      { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 4 },
-      { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-      { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
+      { title: 'Freelancers hoy', flex: 4, reveal:false, num:94310 },
+      { title: 'Nuevas ofertas de trabajo', flex: 4, reveal:false, num:7210  },
+      { title: 'Trabajos totales', flex: 4, reveal:false, num:731240  },
     ],
   }),
+
 
 }
 </script>
