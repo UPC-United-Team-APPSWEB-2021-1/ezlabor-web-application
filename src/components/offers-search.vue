@@ -1,5 +1,35 @@
 <template>
   <v-card>
+    <!--DIALOGS-->
+    <v-dialog v-model="showApplicationDialog" max-width="500px">
+      <v-card>
+        <v-card-title>
+          <span class="headline">Offer Application</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+
+            <v-row>
+              <v-text-field v-model="postulationDialogItem.offerId" type="number" label="Offer Id"></v-text-field>
+            </v-row>
+
+            <v-row>
+              <v-text-field v-model="postulationDialogItem.freelancerId" type="number" label="Freelancer Id"></v-text-field>
+            </v-row>
+
+            <v-row>
+              <v-text-field v-model="postulationDialogItem.presentationMessage" label="Presentation Message"></v-text-field>
+            </v-row>
+
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn text @click="closeOfferPostulationDialog">Cancel</v-btn>
+          <v-btn text @click="createPostulation">Save</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <v-card-title>
       Offers
       <v-spacer></v-spacer>
@@ -38,96 +68,96 @@
               </template>
               <v-card class="filterCard">
                 <v-row>
-                <v-col
-                    cols="12"
-                    sm="6"
-                    md="4"
-                    lg="3"
-                >
-                <v-card-title>
-                  <span class="headline">Filtrar por pago</span>
-                </v-card-title>
-                <v-card-text>
-                  <v-container fluid>
-                    <v-row>
-                      <v-radio-group
-                          v-model="paymentFilter"
-                          column
-                      >
-                        <v-radio
-                            label="All"
-                            value="f1"
-                        ></v-radio>
-                        <v-radio
-                            label="Hasta 1000"
-                            value="f2"
-                            name=f2
-                        ></v-radio>
-                        <v-radio
-                            label="De 1000 hasta 2000"
-                            value="f3"
-                            name=f3
-                        ></v-radio>
-                        <v-radio
-                            label="De 2000 hasta 5000"
-                            value=">f4"
-                            name=f4
-                        ></v-radio>
-                        <v-radio
-                            label="De 5000 hasta 10000"
-                            value=">f5"
-                            name=f5
-                        ></v-radio>
-                        <v-radio
-                            label="Desde 10000"
-                            value="f6"
-                            name=f6
-                        ></v-radio>
-                      </v-radio-group>
-                    </v-row>
-                  </v-container>
-                </v-card-text>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn color="blue darken-1" text @click="applyFilter">Apply</v-btn>
-                </v-card-actions>
-                </v-col>
-
-                <v-col
-                    cols="12"
-                    sm="6"
-                    md="4"
-                    lg="3"
-                >
-                <v-card-title>
-                  <span class="headline">Filtrar por especialidad</span>
-                </v-card-title>
-                <v-card-text>
-                  <v-container fluid>
-                    <p>{{ selected }}</p>
-                    <v-checkbox
-                        v-model="selected"
-                        label="Diseño gráfico"
-                        value="Diseño gráfico"
-                    ></v-checkbox>
-                    <v-checkbox
-                        v-model="selected"
-                        label="Programación web"
-                        value="Programación web"
-                    ></v-checkbox>
-                    <v-checkbox
-                        v-model="selected"
-                        label="Programación de apps"
-                        value="Programación de apps"
-                    ></v-checkbox>
+                  <v-col
+                      cols="12"
+                      sm="6"
+                      md="4"
+                      lg="3"
+                  >
+                    <v-card-title>
+                      <span class="headline">Filtrar por pago</span>
+                    </v-card-title>
+                    <v-card-text>
+                      <v-container fluid>
+                        <v-row>
+                          <v-radio-group
+                              v-model="paymentFilter"
+                              column
+                          >
+                            <v-radio
+                                label="All"
+                                value="f1"
+                            ></v-radio>
+                            <v-radio
+                                label="Hasta 1000"
+                                value="f2"
+                                name=f2
+                            ></v-radio>
+                            <v-radio
+                                label="De 1000 hasta 2000"
+                                value="f3"
+                                name=f3
+                            ></v-radio>
+                            <v-radio
+                                label="De 2000 hasta 5000"
+                                value=">f4"
+                                name=f4
+                            ></v-radio>
+                            <v-radio
+                                label="De 5000 hasta 10000"
+                                value=">f5"
+                                name=f5
+                            ></v-radio>
+                            <v-radio
+                                label="Desde 10000"
+                                value="f6"
+                                name=f6
+                            ></v-radio>
+                          </v-radio-group>
+                        </v-row>
+                      </v-container>
+                    </v-card-text>
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn color="blue darken-1" text @click="applyFilterBySpeciality">Apply</v-btn>
+                      <v-btn color="blue darken-1" text @click="applyFilter">Apply</v-btn>
                     </v-card-actions>
-                  </v-container>
-                </v-card-text>
+                  </v-col>
 
-                </v-col>
+                  <v-col
+                      cols="12"
+                      sm="6"
+                      md="4"
+                      lg="3"
+                  >
+                    <v-card-title>
+                      <span class="headline">Filtrar por especialidad</span>
+                    </v-card-title>
+                    <v-card-text>
+                      <v-container fluid>
+                        <p>{{ selected }}</p>
+                        <v-checkbox
+                            v-model="selected"
+                            label="Diseño gráfico"
+                            value="Diseño gráfico"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="selected"
+                            label="Programación web"
+                            value="Programación web"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="selected"
+                            label="Programación de apps"
+                            value="Programación de apps"
+                        ></v-checkbox>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn color="blue darken-1" text @click="applyFilterBySpeciality">Apply</v-btn>
+                        </v-card-actions>
+                      </v-container>
+                    </v-card-text>
+
+                  </v-col>
                 </v-row>
               </v-card>
             </v-col>
@@ -187,7 +217,11 @@
                     </v-list-item>
                   </v-list>
                   <v-spacer></v-spacer>
-                  <v-btn color="white" text>Postular</v-btn>
+
+                  <v-card-actions>
+                    <v-btn @click="openOfferPostulationDialog()" color="white" text>Apply for this job</v-btn>
+                  </v-card-actions>
+
                 </v-card>
               </v-col>
             </v-row>
@@ -200,22 +234,29 @@
         </template>
 
       </v-data-iterator>
-
     </v-card-text>
+
   </v-card>
-
-
-
 </template>
 
 
 <script>
 import OffersApiService from '../services/offers-api.service';
+import PostulationsApiService from '../services/postulations-api.service';
 
 export default {
   name: "offers",
   data() {
     return {
+      postulationDialogItem: {
+        id: 0,
+        offerId: 0,
+        freelancerId:0,
+        presentationMessage: '',
+        postulationDate: '',
+        state: "Pending"
+      },
+      showApplicationDialog: false,
       search: '',
       chips: ['Programming', 'Playing video games', 'Watching movies', 'Sleeping'],
       items: ['Streaming', 'Eating'],
@@ -360,6 +401,12 @@ export default {
     },
   },
   methods: {
+    openOfferPostulationDialog(){
+      this.showApplicationDialog = true
+    },
+    closeOfferPostulationDialog() {
+      this.showApplicationDialog = false
+    },
     remove (item) {
       this.chips.splice(this.chips.indexOf(item), 1)
       this.chips = [...this.chips]
@@ -489,6 +536,22 @@ export default {
         this.displayOffers = this.filterByPayment(10000, 1000000000)
       }
       this.closeFilter()
+    },
+    createPostulation(){
+      //const postulation_id = parseInt(this.postulations[this.postulations.length - 1].id) + 1;
+
+      //this.postulationDialogItem.id = postulation_id
+      this.postulationDialogItem.postulationDate = new Date().toDateString();
+      this.postulationDialogItem.state = 'Pending'
+
+      PostulationsApiService.create(this.postulationDialogItem)
+          .then(() => {
+            console.log("Offer postulation submitted successfully");
+          })
+          .catch(e => {
+            console.log(e);
+          })
+      this.closeOfferPostulationDialog()
     },
     save() {
       if (this.editedIndex > -1) {

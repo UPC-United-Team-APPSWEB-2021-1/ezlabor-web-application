@@ -64,30 +64,39 @@
     },
     {
       "id": 5,
-      "payment": "222",
+      "payment": "324234",
       "createdAt": "Thu Jun 24 2021",
       "state": true,
-      "title": "diseñador",
-      "duration": "222",
+      "title": "qweqwe",
+      "duration": "234234",
       "published": true
     },
     {
       "id": 6,
-      "payment": "900",
+      "payment": "234242",
       "createdAt": "Thu Jun 24 2021",
       "state": true,
-      "title": "diseñador ",
-      "duration": "3",
+      "title": "sfds",
+      "duration": "23423",
       "published": true
+    }
+  ],
+  "postulations": [
+    {
+      "id": 2,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "Hola contratenme p",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
     },
     {
-      "id": 7,
-      "payment": "2222",
-      "createdAt": "Thu Jun 24 2021",
-      "state": true,
-      "title": "22",
-      "duration": "22222",
-      "published": true
+      "id": 3,
+      "offerId": "234",
+      "freelancerId": "0234324",
+      "presentationMessage": "234243",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
     }
   ]
 }

@@ -5,10 +5,15 @@
 </template>
 
 <script>
-import Postulations from "../components/postulations";
+//import OldPostulations from "../components/old-postulations";
+import Postulations from '../components/postulations'
+
 export default {
-name: "Postulation",
-components: {Postulations}
+  name: "Postulation",
+  components: {
+    //OldPostulations,
+    Postulations
+  }
 }
 </script>
 
