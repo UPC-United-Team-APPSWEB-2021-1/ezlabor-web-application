@@ -1,0 +1,40 @@
+{
+  "offers": [
+    {
+      "id": 0,
+      "payment": "900",
+      "createdAt": "17 de agosto",
+      "state": "yes",
+      "title": "Se busca analista para HOY",
+      "duration": "10",
+      "published": false
+    },
+    {
+      "id": 1,
+      "payment": 800,
+      "createdAt": "14 de agosto",
+      "state": "yes",
+      "title": "Se busca entrenador",
+      "duration": 6,
+      "published": false
+    },
+    {
+      "id": 2,
+      "payment": 1200,
+      "createdAt": "14 de septiembre",
+      "state": "yes",
+      "title": "Se busca editor de video",
+      "duration": 6,
+      "published": false
+    },
+    {
+      "id": 3,
+      "payment": 1200,
+      "createdAt": "14 de diciembre",
+      "state": "yes",
+      "title": "Se busca musico",
+      "duration": 6,
+      "published": false
+    }
+  ]
+}

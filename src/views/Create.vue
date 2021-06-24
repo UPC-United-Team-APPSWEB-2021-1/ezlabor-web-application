@@ -1,15 +1,16 @@
 <template>
- <v-card>
-   <v-card-title>
-     Create a new offer
-   </v-card-title>
-
- </v-card>
+  <v-app>
+    <create-offers></create-offers>
+  </v-app>
 </template>
 
 <script>
+import createOffers from "../components/create-offer";
 export default {
-name: "Create"
+  name: "Create",
+  components: {
+    createOffers
+  }
 }
 </script>
 
