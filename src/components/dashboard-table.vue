@@ -1,31 +1,46 @@
 <template>
-  <v-card width="600" class="mx-auto mt-5" >
-    <v-card-title> <h2>Ofertas pendientes</h2> </v-card-title>
+  <div class="pending">
+    <v-simple-table v-slot:default>
+      <template>
 
-    <v-simple-table fixed-header>
-      <template v-slot:default>
-        <thead>
-        <tr>
-          <th class="text-left">
-            Name
-          </th>
-          <th class="text-left">
-            Calories
-          </th>
-        </tr>
-        </thead>
+      <thead>
+      <tr>
+        <th class="text-left">
+          Id
+        </th>
+        <th class="text-left">
+          Nombre
+        </th>
+        <th class="text-left">
+          Descripcion
+        </th>
+        <th class="text-left">
+          Estado
+        </th>
+        <th class="text-left">
+          Acciones
+        </th>
+      </tr>
+      </thead>
         <tbody>
         <tr
-            v-for="item in desserts"
-            :key="item.name"
+            v-for="item in information"
+            :key="item.id"
         >
+          <td>{{ item.id }}</td>
           <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.state }}</td>
+          <td>{{ item.state }}</td>
+
         </tr>
         </tbody>
+
       </template>
+
     </v-simple-table>
-  </v-card>
+
+  </div>
 </template>
 
 <script>
@@ -33,16 +48,13 @@ export default {
 name: "dashboard-table",
   data () {
     return {
-      desserts: [
-        {
-          name: 'Frozen Yogurt',
-          calories: 159,
-        },
-        {
-          name: 'Ice cream sandwich',
-          calories: 237,
-        }
-      ],
+      information:[
+          {id:1, name: 'UX Design', description: 'Busco empleado', state:'pending'},
+        {id:2, name: 'UX Design', description: 'Busco empleado', state:'pending'},
+        {id:3, name: 'UX Design', description: 'Busco empleado', state:'pending'},
+        {id:4, name: 'UX Design', description: 'Busco empleado', state:'pending'},
+
+      ]
     }
   },
 }
