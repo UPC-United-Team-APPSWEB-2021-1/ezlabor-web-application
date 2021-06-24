@@ -25,7 +25,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn :color="primaryColor" text @click="close">Cancel</v-btn>
+          <v-btn :color="primaryColor" text @click="closeCreateAndEdit">Cancel</v-btn>
           <v-btn :color="primaryColor" text @click="save">Save</v-btn>
         </v-card-actions>
       </v-card>
@@ -58,7 +58,7 @@
     </v-card-title>
     <v-card-text>
       <v-data-table :headers="headers"
-                    :items="displayOffers"
+                    :items="offers"
                     :items-per-page="15"
                     :search="search"
                     class="elevation-2" ref="offersTable">
@@ -90,35 +90,33 @@ export default {
       dialogCreateAndEdit: false,
       dialogDelete: false,
       headers: [
-        {text: 'Id', value: 'id'},
-        {text: 'Payment', value: 'payment'},
-        {text: 'State', value: 'state'},
         {text: 'Title', value: 'title'},
-        {text: 'Duration', value: 'duration'},
-        {text: 'Status', value: 'status'},
-        {text: 'Date Created', value: 'createdAt'},
+        {text: 'Payment', value: 'payment', align: "center"},
+        {text: 'Duration', value: 'duration', align: "center"},
+        {text: 'Date Created', value: 'publicationDate', align: "center"},
         {text: 'Actions', value: 'actions', sortable: false}
       ],
       offers: [],
-      displayOffers: [],
       editedIndex: -1,
       dialogItem: {
         id: 0,
+        employerId: 0,
+        description: '',
         payment: '',
-        createdAt: '',
-        state: false,
+        publicationDate: '',
+        state: true,
         title: '',
-        duration: '',
-        published: false
+        duration: ''
       },
       defaultItem: {
         id: 0,
+        employerId: 0,
+        description: '',
         payment: '',
-        createdAt: '',
-        state: false,
+        publicationDate: '',
+        state: true,
         title: '',
-        duration: '',
-        published: false
+        duration: ''
       },
     }
   },
@@ -129,7 +127,7 @@ export default {
   },
   watch: {
     dialogCreateAndEdit(val) {
-      val || this.close()
+      val || this.closeCreateAndEdit()
     },
     dialogDelete(val) {
       val || this.closeDelete()
@@ -140,46 +138,24 @@ export default {
       OffersApiService.getAll()
           .then(response => {
             this.offers = response.data;
-            this.displayOffers = response.data.map(this.getDisplayOffer);
           })
           .catch((e) => {
             console.log(e);
           });
-    },
-    getDisplayOffer(offer) {
-      return {
-        id: offer.id,
-        payment: offer.payment,
-        createdAt: offer.createdAt,
-        state: offer.state,
-        title: offer.title,
-        duration: offer.duration,
-        status: offer.published ? 'Published' : 'Pending'
-      };
     },
     refreshList() {
       this.retrieveOffers();
-    },
-    removeAllOffers() {
-      OffersApiService.deleteAll()
-          .then(() => {
-            this.refreshList();
-          })
-          .catch((e) => {
-            alert("The Backend does not support this operation.");
-            console.log(e);
-          });
     },
     createItem(){
       this.dialogCreateAndEdit = true;
     },
     editItem(item) {
-      this.editedIndex = this.displayOffers.indexOf(item);
+      this.editedIndex = this.offers.indexOf(item);
       this.dialogItem = this.offers[this.editedIndex];
       this.dialogCreateAndEdit = true;
     },
     deleteItem(item) {
-      this.editedIndex = this.displayOffers.indexOf(item);
+      this.editedIndex = this.offers.indexOf(item);
       this.dialogItem = Object.assign({}, this.offers[this.editedIndex]);
       this.dialogDelete = true;
     },
@@ -188,12 +164,13 @@ export default {
       this.offers.splice(this.editedIndex, 1);
       this.closeDelete();
     },
-    close() {
+    closeCreateAndEdit() {
       this.dialogCreateAndEdit = false
       this.$nextTick(() => {
         this.dialogItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       })
+      this.refreshList()
     },
     closeDelete() {
       this.dialogDelete = false
@@ -205,7 +182,6 @@ export default {
     save() {
       if (this.editedIndex > -1) {
         this.offers[this.editedIndex] = this.dialogItem;
-        this.displayOffers[this.editedIndex] = this.getDisplayOffer(this.offers[this.editedIndex]);
         OffersApiService.update(this.dialogItem.id, this.dialogItem)
             .then(() => {
               this.refreshList();
@@ -216,10 +192,10 @@ export default {
 
       }
       else {
-        const new_id = parseInt(this.displayOffers[this.displayOffers.length - 1].id) + 1;
+        const new_id = parseInt(this.offers[this.offers.length - 1].id) + 1;
 
         this.dialogItem.id = new_id
-        this.dialogItem.createdAt = new Date().toDateString();
+        this.dialogItem.publicationDate = new Date().toDateString();
         this.dialogItem.published = true
         this.dialogItem.state = true
 
@@ -227,13 +203,12 @@ export default {
             .then(response => {
               let item = response.data;
               this.offers.push(item);
-              this.displayOffers.push(this.getDisplayOffer(item));
             })
             .catch(e => {
               console.log(e);
             })
       }
-      this.close()
+      this.closeCreateAndEdit()
     },
     deleteOffer(id) {
       OffersApiService.delete(id)
@@ -241,6 +216,16 @@ export default {
             this.refreshList();
           })
           .catch((e) => {
+            console.log(e);
+          });
+    },
+    removeAllOffers() {
+      OffersApiService.deleteAll()
+          .then(() => {
+            this.refreshList();
+          })
+          .catch((e) => {
+            alert("The Backend does not support this operation.");
             console.log(e);
           });
     },
@@ -252,7 +237,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.boton {
-  text-align: left;
-}
 </style>
