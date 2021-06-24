@@ -63,10 +63,6 @@
                     :search="search"
                     class="elevation-2" ref="offersTable">
 
-        <template v-slot:top class="ga">
-          <v-btn @click="createItem()" dark class="mb-2" :color="primaryColor">Create Offer</v-btn>
-        </template>
-
         <template v-slot:[`item.actions`]="{ item }">
           <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
           <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
@@ -74,6 +70,9 @@
 
       </v-data-table>
     </v-card-text>
+    <v-card-actions>
+      <v-btn @click="createItem()" dark class="mb-2" :color="primaryColor">Create Offer</v-btn>
+    </v-card-actions>
   </v-card>
 
 </template>
@@ -253,5 +252,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.boton {
+  text-align: left;
+}
 </style>

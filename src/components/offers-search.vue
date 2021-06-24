@@ -15,7 +15,6 @@
           :items="displayOffers"
           :items-per-page="5"
           :search="search"
-
           hide-default-footer
           ref="offersTable">
         <!--:custom-filter="filterBySearch"-->
