@@ -1,9 +1,7 @@
-
+<template>
   <v-app>
     <offers></offers>
   </v-app>
-
-
 </template>
 
 <script>
@@ -13,4 +11,5 @@ name: "Search",
  components: {
     Offers
   }
-};
+}
+</script>

@@ -1,17 +1,18 @@
 <template>
-
- <v-app>
-   <postulation></postulation>
-
- </v-app>
+  <v-app>
+    <create-offers></create-offers>
+  </v-app>
 </template>
 
 <script>
-
-import Postulation from "@/views/Postulation";
+import createOffers from "../components/create-offer";
 export default {
-name: "Create",
-  components: {Postulation}
+  name: "Create",
+  components: {
+    createOffers
+  }
+
+
 }
 </script>
 
