@@ -25,19 +25,26 @@
 
         </template>
 
+
+
+
         <template v-slot:default>
           <div>
 
+
             <v-col
-                cols="12"
-                sm="6"
-                md="4"
-                lg="3"
-            >
+                cols="12">
               <template v-slot:activator="{ on, attrs }">
                 <v-btn color="#794DFF" dark class="mb-2" v-bind="attrs" v-on="on">Filtrar</v-btn>
               </template>
-              <v-card>
+              <v-card class="filterCard">
+                <v-row>
+                <v-col
+                    cols="12"
+                    sm="6"
+                    md="4"
+                    lg="3"
+                >
                 <v-card-title>
                   <span class="headline">Filtrar por pago</span>
                 </v-card-title>
@@ -53,27 +60,27 @@
                             value="f1"
                         ></v-radio>
                         <v-radio
-                            label="< 1000"
+                            label="Hasta 1000"
                             value="f2"
                             name=f2
                         ></v-radio>
                         <v-radio
-                            label=">=1000 & <2000"
+                            label="De 1000 hasta 2000"
                             value="f3"
                             name=f3
                         ></v-radio>
                         <v-radio
-                            label=">=2000 & <5000"
+                            label="De 2000 hasta 5000"
                             value=">f4"
                             name=f4
                         ></v-radio>
                         <v-radio
-                            label=">=5000 & <10000"
+                            label="De 5000 hasta 10000"
                             value=">f5"
                             name=f5
                         ></v-radio>
                         <v-radio
-                            label=">=10000"
+                            label="Desde 10000"
                             value="f6"
                             name=f6
                         ></v-radio>
@@ -85,9 +92,14 @@
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" text @click="applyFilter">Apply</v-btn>
                 </v-card-actions>
+                </v-col>
 
-
-
+                <v-col
+                    cols="12"
+                    sm="6"
+                    md="4"
+                    lg="3"
+                >
                 <v-card-title>
                   <span class="headline">Filtrar por especialidad</span>
                 </v-card-title>
@@ -109,12 +121,15 @@
                         label="Programación de apps"
                         value="Programación de apps"
                     ></v-checkbox>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn color="blue darken-1" text @click="applyFilterBySpeciality">Apply</v-btn>
+                    </v-card-actions>
                   </v-container>
                 </v-card-text>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn color="blue darken-1" text @click="applyFilterBySpeciality">Apply</v-btn>
-                </v-card-actions>
+
+                </v-col>
+                </v-row>
               </v-card>
             </v-col>
           </div>
@@ -127,10 +142,9 @@
                   cols="12"
                   sm="6"
                   md="4"
-                  lg="3"
               >
-                <v-card>
-                  <v-card-title class="subheading font-weight-bold">
+                <v-card class="purple darken-1">
+                  <v-card-title class="cardTitle  font-weight-bold align-center">
                     {{ offer.title }}
                   </v-card-title>
 
@@ -173,6 +187,8 @@
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
+                  <v-spacer></v-spacer>
+                  <v-btn color="white" text>Postular</v-btn>
                 </v-card>
               </v-col>
             </v-row>
@@ -188,7 +204,11 @@
 
     </v-card-text>
   </v-card>
+
+
+
 </template>
+
 
 <script>
 import OffersApiService from '../services/offers-api.service';
@@ -198,6 +218,8 @@ export default {
   data() {
     return {
       search: '',
+      chips: ['Programming', 'Playing video games', 'Watching movies', 'Sleeping'],
+      items: ['Streaming', 'Eating'],
       dialog: false,
       dialogDelete: false,
       dialogFilter: false,
@@ -339,6 +361,10 @@ export default {
     },
   },
   methods: {
+    remove (item) {
+      this.chips.splice(this.chips.indexOf(item), 1)
+      this.chips = [...this.chips]
+    },
     filterBySpeciality(){
       let tList = []
       for (let i=0; i<=this.selected.length; i++){
@@ -518,5 +544,10 @@ export default {
 </script>
 
 <style scoped>
-
+.filterCard{
+  border-color: darkviolet;
+}
+.cardTitle{
+  color: white;
+}
 </style>
