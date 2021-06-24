@@ -11,6 +11,8 @@ export default {
   components: {
     createOffers
   }
+
+
 }
 </script>
 
