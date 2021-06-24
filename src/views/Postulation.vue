@@ -1,15 +1,14 @@
 <template>
   <v-app>
-    <postulations></postulations>
-
+    <create-postulations></create-postulations>
   </v-app>
 </template>
 
 <script>
-import Postulations from "../components/postulations";
+import CreatePostulations from "../components/create-postulation";
 export default {
-name: "Postulation",
-components: {Postulations}
+  name: "Postulation",
+  components: {CreatePostulations}
 }
 </script>
 
