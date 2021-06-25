@@ -4,16 +4,25 @@
         v-model="drawer"
         app
     >
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            <h2>EZLabor</h2>
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            subtext
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+      <v-card flat>
+        <v-card-title class="text-h6">
+          <h2>EZLabor</h2>
+        </v-card-title>
+        <v-card-text>
+          <v-list-item dense>
+            <v-list-item-avatar>
+              <v-icon>mdi-account-circle</v-icon>
+            </v-list-item-avatar>
+
+            <v-list-item-content>
+              <router-link to="/user">
+                <h3 class="align-end">Hello User1!</h3>
+              </router-link>
+            </v-list-item-content>
+
+          </v-list-item>
+        </v-card-text>
+      </v-card>
 
       <v-divider></v-divider>
 
@@ -99,3 +108,9 @@ export default {
   }),
 }
 </script>
+
+<style scoped>
+  .h3 label{
+    font-size: 20px;
+  }
+</style>

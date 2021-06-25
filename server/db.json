@@ -22,6 +22,7 @@
       "employerId": 1,
       "title": "programador en c++",
       "description": "",
+      "speciality": "Programming",
       "payment": "400",
       "publicationDate": "Thu Jun 24 2021",
       "state": true,
@@ -31,12 +32,35 @@
       "id": 1,
       "employerId": 0,
       "description": "",
+      "speciality": "Video and Audio",
       "payment": "800",
       "publicationDate": "Thu Jun 24 2021",
       "state": true,
       "title": "Editor de Video",
       "duration": "5",
       "published": true
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "username": "User1",
+      "email": "user1@gmail.com",
+      "password": "123",
+      "subscription_active": "",
+      "first_name": "Roger",
+      "last_name": "Waters",
+      "birth_date": "14 august",
+      "description": "XD",
+      "phone": "+51999999999",
+      "personal_web": "www.xd.com",
+      "register_date": "february",
+      "district_id": 0,
+      "rating": 5,
+      "facebook_link": "www",
+      "instagram_link": "www",
+      "twitter_link": "www",
+      "image_url": "https://lh3.googleusercontent.com/proxy/tb8SdRsgPpYZDySnZoL2N-A6eDjbNS1vDDfC8aYZ90QjC5zx2BoOWzCwt7Iu66Wk5cUOhBhLXrAjVD2WmkR8fe4jq822wu6kN5wxfEDHKuU6E6FZWVcYO-AXrbYj"
     }
   ]
 }
