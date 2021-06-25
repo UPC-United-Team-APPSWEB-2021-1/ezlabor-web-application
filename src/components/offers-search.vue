@@ -248,14 +248,6 @@ export default {
   name: "offers",
   data() {
     return {
-      postulationDialogItem: {
-        id: 0,
-        offerId: 0,
-        freelancerId:0,
-        presentationMessage: '',
-        postulationDate: '',
-        state: "Pending"
-      },
       showApplicationDialog: false,
       search: '',
       chips: ['Programming', 'Playing video games', 'Watching movies', 'Sleeping'],
@@ -385,6 +377,25 @@ export default {
         specialty: '',
         published: false
       },
+
+
+      postulationDialogItem: {
+        id: 0,
+        offerId: 0,
+        freelancerId: 0,
+        presentationMessage: '',
+        postulationDate: '',
+        state: "Pending"
+      },
+      defaultPostulationDialogItem: {
+        id: 0,
+        offerId: 0,
+        freelancerId: 0,
+        presentationMessage: '',
+        postulationDate: '',
+        state: "Pending"
+      },
+
     }
   },
   computed: {
@@ -401,12 +412,7 @@ export default {
     },
   },
   methods: {
-    openOfferPostulationDialog(){
-      this.showApplicationDialog = true
-    },
-    closeOfferPostulationDialog() {
-      this.showApplicationDialog = false
-    },
+
     remove (item) {
       this.chips.splice(this.chips.indexOf(item), 1)
       this.chips = [...this.chips]
@@ -537,22 +543,6 @@ export default {
       }
       this.closeFilter()
     },
-    createPostulation(){
-      //const postulation_id = parseInt(this.postulations[this.postulations.length - 1].id) + 1;
-
-      //this.postulationDialogItem.id = postulation_id
-      this.postulationDialogItem.postulationDate = new Date().toDateString();
-      this.postulationDialogItem.state = 'Pending'
-
-      PostulationsApiService.create(this.postulationDialogItem)
-          .then(() => {
-            console.log("Offer postulation submitted successfully");
-          })
-          .catch(e => {
-            console.log(e);
-          })
-      this.closeOfferPostulationDialog()
-    },
     save() {
       if (this.editedIndex > -1) {
         this.offers[this.editedIndex] = this.editedItem;
@@ -597,7 +587,36 @@ export default {
       }
       this.list = []
       return tList
-    }
+    },
+
+
+
+    openOfferPostulationDialog(){
+      this.showApplicationDialog = true
+    },
+    closeOfferPostulationDialog() {
+      this.showApplicationDialog = false
+      this.$nextTick(() => {
+        this.postulationDialogItem = Object.assign({}, this.defaultPostulationDialogItem)
+      });
+      this.refreshList();
+    },
+    createPostulation(){
+      //const postulation_id = parseInt(this.postulations[this.postulations.length - 1].id) + 1;
+
+      //this.postulationDialogItem.id = postulation_id
+      this.postulationDialogItem.postulationDate = new Date().toDateString();
+      this.postulationDialogItem.state = 'Pending'
+
+      PostulationsApiService.create(this.postulationDialogItem)
+          .then(() => {
+            console.log("Offer postulation submitted successfully");
+          })
+          .catch(e => {
+            console.log(e);
+          })
+      this.closeOfferPostulationDialog()
+    },
   },
   mounted() {
     this.retrieveOffers();

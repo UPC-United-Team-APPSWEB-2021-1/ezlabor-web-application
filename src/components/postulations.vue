@@ -70,9 +70,6 @@
 
       </v-data-table>
     </v-card-text>
-    <v-card-actions>
-      <v-btn @click="createItem()" dark class="mb-2" :color="primaryColor">Create Postulation</v-btn>
-    </v-card-actions>
   </v-card>
 
 </template>
@@ -102,7 +99,7 @@ export default {
       dialogItem: {
         id: 0,
         offerId: 0,
-        freelancerId:0,
+        freelancerId: 0,
         presentationMessage: '',
         postulationDate: '',
         state: "Pending"
@@ -110,7 +107,7 @@ export default {
       defaultItem: {
         id: 0,
         offerId: 0,
-        freelancerId:0,
+        freelancerId: 0,
         presentationMessage: '',
         postulationDate: '',
         state: "Pending"
@@ -153,14 +150,11 @@ export default {
     },
     deleteItem(item) {
       this.editedIndex = this.postulations.indexOf(item);
-      console.log("Postulations list")
-      console.log(this.postulations)
       this.dialogItem = Object.assign({}, this.postulations[this.editedIndex]);
       this.dialogDelete = true;
     },
     deleteItemConfirm() {
       this.deletePostulation(this.dialogItem.id);
-      this.postulations.splice(this.editedIndex, 1);
       this.closeDelete();
     },
     closeCreateAndEdit() {
@@ -168,11 +162,11 @@ export default {
       this.$nextTick(() => {
         this.dialogItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
-      })
-      this.refreshList()
+      });
+      this.refreshList();
     },
     closeDelete() {
-      this.dialogDelete = false
+      this.dialogDelete = false;
       this.$nextTick(() => {
         this.dialogItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
@@ -193,6 +187,8 @@ export default {
       else {
         const new_id = parseInt(this.postulations[this.postulations.length - 1].id) + 1;
 
+        this.dialogItem.offerId = parseInt(this.dialogItem.offerId)
+        this.dialogItem.freelancerId = parseInt(this.dialogItem.freelancerId)
         this.dialogItem.id = new_id
         this.dialogItem.postulationDate = new Date().toDateString();
         this.dialogItem.state = 'Pending'
@@ -203,13 +199,11 @@ export default {
             })
             .catch(e => {
               console.log(e);
-            })
+            });
       }
       this.closeCreateAndEdit()
     },
     deletePostulation(id) {
-      console.log("deletePostulation Id =");
-      console.log(id);
       PostulationsApiService.delete(id)
           .then(() => {
             this.refreshList();

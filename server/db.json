@@ -83,7 +83,7 @@
   ],
   "postulations": [
     {
-      "id": 2,
+      "id": 0,
       "offerId": 0,
       "freelancerId": 0,
       "presentationMessage": "Hola contratenme p",
@@ -91,10 +91,26 @@
       "state": "Pending"
     },
     {
+      "id": 1,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "Hola contratenme p",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
+    },
+    {
+      "id": 2,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "sdf",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
+    },
+    {
       "id": 3,
-      "offerId": "234",
-      "freelancerId": "0234324",
-      "presentationMessage": "234243",
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "dfghdgf",
       "postulationDate": "Thu Jun 24 2021",
       "state": "Pending"
     }
