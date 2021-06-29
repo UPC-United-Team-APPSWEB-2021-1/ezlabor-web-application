@@ -1,4 +1,4 @@
-import AuthorizationApiService from '../services/authorization-api.service';
+import AuthorizationApiService from '../services/authorization/authorization-api.service';
 
 const user = JSON.parse(localStorage.getItem('user'));
 
