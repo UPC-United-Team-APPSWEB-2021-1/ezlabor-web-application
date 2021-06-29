@@ -22,8 +22,8 @@
       "employerId": 1,
       "title": "programador en c++",
       "description": "",
-      "specialty": "Programming",
-      "payment": "400",
+      "specialty": "Diseño gráfico",
+      "payment": 3000,
       "publicationDate": "Thu Jun 24 2021",
       "state": true,
       "duration": "4",
@@ -34,8 +34,8 @@
       "employerId": 1,
       "title": "programador en c++",
       "description": "",
-      "specialty": "Programming",
-      "payment": "400",
+      "specialty": "Programación web",
+      "payment": 1400,
       "publicationDate": "Thu Jun 24 2021",
       "state": true,
       "duration": "4",
@@ -46,25 +46,28 @@
       "employerId": 1,
       "title": "programador en c++",
       "description": "",
-      "specialty": "Programming",
-      "payment": "400",
+      "specialty": "Programación de apps",
+      "payment": 400,
       "publicationDate": "Thu Jun 24 2021",
       "state": true,
       "duration": "4",
+      "published": true
+    },
+    {
+      "id": 3,
+      "employerId": 0,
+      "description": "",
+      "payment": "66666",
+      "publicationDate": "Mon Jun 28 2021",
+      "state": true,
+      "title": "diseñador",
+      "duration": "1",
       "published": true
     }
   ],
   "postulations": [
     {
       "id": 0,
-      "offerId": 0,
-      "freelancerId": 0,
-      "presentationMessage": "Hola contratenme p",
-      "postulationDate": "Thu Jun 24 2021",
-      "state": "Pending"
-    },
-    {
-      "id": 1,
       "offerId": 0,
       "freelancerId": 0,
       "presentationMessage": "Hola contratenme p",
@@ -85,21 +88,8 @@
       "freelancerId": 0,
       "presentationMessage": "dfghdgf",
       "postulationDate": "Thu Jun 24 2021",
-      "state": "Pending"
-
+      "state": "Pending",
       "duration": "3"
-    },
-    {
-      "id": 1,
-      "employerId": 0,
-      "description": "",
-      "speciality": "Video and Audio",
-      "payment": "800",
-      "publicationDate": "Thu Jun 24 2021",
-      "state": true,
-      "title": "Editor de Video",
-      "duration": "5",
-      "published": true
     }
   ],
   "users": [

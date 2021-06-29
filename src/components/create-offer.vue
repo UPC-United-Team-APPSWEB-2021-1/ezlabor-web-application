@@ -14,6 +14,10 @@
             </v-row>
 
             <v-row>
+              <v-text-field v-model="dialogItem.specialty" label="Speciality"></v-text-field>
+            </v-row>
+
+            <v-row>
               <v-text-field v-model="dialogItem.payment" type="number" label="Payment"></v-text-field>
             </v-row>
 
@@ -102,6 +106,7 @@ export default {
         id: 0,
         employerId: 0,
         description: '',
+        specialty: '',
         payment: '',
         publicationDate: '',
         state: true,
@@ -112,6 +117,7 @@ export default {
         id: 0,
         employerId: 0,
         description: '',
+        specialty: '',
         payment: '',
         publicationDate: '',
         state: true,

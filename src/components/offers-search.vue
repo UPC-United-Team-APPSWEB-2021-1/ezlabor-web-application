@@ -195,7 +195,7 @@
                     <v-list-item>
                       <v-list-item-content>Created at:</v-list-item-content>
                       <v-list-item-content class="align-end">
-                        {{ offer.createdAt }}
+                        {{ offer.publicationDate }}
                       </v-list-item-content>
                     </v-list-item>
 
