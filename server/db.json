@@ -19,75 +19,99 @@
   "offers": [
     {
       "id": 0,
-      "payment": "900",
-      "createdAt": "17 de agosto",
-      "state": "yes",
-      "title": "Se busca analista para HOY",
-      "duration": "10",
-      "published": true
-    },
-    {
-      "id": 1,
-      "payment": 800,
-      "createdAt": "14 de agosto",
-      "state": "yes",
-      "title": "Se busca entrenador",
-      "duration": 6,
-      "published": true
-    },
-    {
-      "id": 2,
-      "payment": 1200,
-      "createdAt": "Thu May 17 2021",
-      "state": "yes",
-      "title": "Se busca editor de video",
-      "duration": 6,
-      "published": true
-    },
-    {
-      "id": 3,
-      "payment": 1200,
-      "createdAt": "Thu Jun 24 2021",
-      "state": "yes",
-      "title": "Se busca musico",
-      "duration": 6,
-      "published": true
-    },
-    {
-      "id": 4,
-      "payment": "233",
-      "createdAt": "Thu Jun 24 2021",
+      "employerId": 1,
+      "title": "programador en c++",
+      "description": "",
+      "specialty": "Diseño gráfico",
+      "payment": 3000,
+      "publicationDate": "Thu Jun 24 2021",
       "state": true,
-      "title": "artista",
       "duration": "4",
       "published": true
     },
     {
-      "id": 5,
-      "payment": "222",
-      "createdAt": "Thu Jun 24 2021",
+      "id": 1,
+      "employerId": 1,
+      "title": "programador en c++",
+      "description": "",
+      "specialty": "Programación web",
+      "payment": 1400,
+      "publicationDate": "Thu Jun 24 2021",
+      "state": true,
+      "duration": "4",
+      "published": true
+    },
+    {
+      "id": 2,
+      "employerId": 1,
+      "title": "programador en c++",
+      "description": "",
+      "specialty": "Programación de apps",
+      "payment": 400,
+      "publicationDate": "Thu Jun 24 2021",
+      "state": true,
+      "duration": "4",
+      "published": true
+    },
+    {
+      "id": 3,
+      "employerId": 0,
+      "description": "",
+      "payment": "66666",
+      "publicationDate": "Mon Jun 28 2021",
       "state": true,
       "title": "diseñador",
-      "duration": "222",
+      "duration": "1",
       "published": true
+    }
+  ],
+  "postulations": [
+    {
+      "id": 0,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "Hola contratenme p",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
     },
     {
-      "id": 6,
-      "payment": "900",
-      "createdAt": "Thu Jun 24 2021",
-      "state": true,
-      "title": "diseñador ",
-      "duration": "3",
-      "published": true
+      "id": 2,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "sdf",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
     },
     {
-      "id": 7,
-      "payment": "2222",
-      "createdAt": "Thu Jun 24 2021",
-      "state": true,
-      "title": "22",
-      "duration": "22222",
-      "published": true
+      "id": 3,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "dfghdgf",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending",
+      "duration": "3"
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "username": "User1",
+      "email": "user1@gmail.com",
+      "password": "123",
+      "subscription_active": "",
+      "first_name": "Roger",
+      "last_name": "Waters",
+      "birth_date": "14 august",
+      "description": "XD",
+      "phone": "+51999999999",
+      "personal_web": "www.xd.com",
+      "register_date": "february",
+      "district_id": 0,
+      "rating": 5,
+      "facebook_link": "www",
+      "instagram_link": "www",
+      "twitter_link": "www",
+      "image_url": "https://lh3.googleusercontent.com/proxy/tb8SdRsgPpYZDySnZoL2N-A6eDjbNS1vDDfC8aYZ90QjC5zx2BoOWzCwt7Iu66Wk5cUOhBhLXrAjVD2WmkR8fe4jq822wu6kN5wxfEDHKuU6E6FZWVcYO-AXrbYj"
     }
   ]
 }
