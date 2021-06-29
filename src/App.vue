@@ -95,6 +95,7 @@ export default {
       { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/dashboard' },
       { title: 'Search', icon: 'mdi-account-search', to: '/search' },
       { title: 'Create', icon: 'mdi-briefcase-plus', to: '/create' },
+      { title: 'My Postulations', icon: 'mdi-briefcase-plus', to: '/postulations' },
       { title: 'About', icon: 'mdi-information', to: '/about' },
     ],
     right: null,

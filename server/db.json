@@ -26,6 +26,62 @@
       "payment": "400",
       "publicationDate": "Thu Jun 24 2021",
       "state": true,
+      "title": "artista",
+      "duration": "4",
+      "published": true
+    },
+    {
+      "id": 5,
+      "payment": "324234",
+      "createdAt": "Thu Jun 24 2021",
+      "state": true,
+      "title": "qweqwe",
+      "duration": "234234",
+      "published": true
+    },
+    {
+      "id": 6,
+      "payment": "234242",
+      "createdAt": "Thu Jun 24 2021",
+      "state": true,
+      "title": "sfds",
+      "duration": "23423",
+      "published": true
+    }
+  ],
+  "postulations": [
+    {
+      "id": 0,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "Hola contratenme p",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
+    },
+    {
+      "id": 1,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "Hola contratenme p",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
+    },
+    {
+      "id": 2,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "sdf",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
+    },
+    {
+      "id": 3,
+      "offerId": 0,
+      "freelancerId": 0,
+      "presentationMessage": "dfghdgf",
+      "postulationDate": "Thu Jun 24 2021",
+      "state": "Pending"
+
       "duration": "3"
     },
     {
