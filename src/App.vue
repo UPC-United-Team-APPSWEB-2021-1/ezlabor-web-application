@@ -1,10 +1,12 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" class="blue-grey lighten-3">
     <v-navigation-drawer
         v-model="drawer"
         app
+        color="deep-purple accent-2"
+
     >
-      <v-card flat>
+      <v-card flat color="deep-purple accent-2">
         <v-card-title class="text-h6">
           <h2>EZLabor</h2>
         </v-card-title>
@@ -48,7 +50,7 @@
       <!--  -->
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <v-app-bar app color="deep-purple accent-2">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>Application</v-toolbar-title>

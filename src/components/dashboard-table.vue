@@ -1,6 +1,6 @@
 <template>
-  <div class="pending">
-    <v-simple-table v-slot:default>
+  <div class="pending" >
+    <v-simple-table v-slot:default >
       <template>
 
       <thead>

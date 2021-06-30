@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card >
     <!--DIALOGS-->
     <v-dialog v-model="dialogCreateAndEdit" max-width="500px">
       <v-card>

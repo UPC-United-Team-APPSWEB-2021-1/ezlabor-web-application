@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="deep-purple lighten-5">
     <offers></offers>
   </v-app>
 </template>

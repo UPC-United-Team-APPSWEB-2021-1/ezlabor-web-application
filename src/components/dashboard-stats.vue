@@ -24,7 +24,7 @@
             </div>
           </v-card-text>
           <v-card-actions>
-            <v-btn @click=" navigateToAddPostulation()" > {{card.button}}</v-btn>
+            <v-btn @click="navigateTo(card.route) " > {{card.button}}</v-btn>
           </v-card-actions>
 
 
@@ -40,17 +40,21 @@ name: "dashboard-stats",
 
   data: () => ({
 
+
     cards: [
-      { title: 'Freelancers disponibles', flex: 4, num:9310, button:'Buscar freelancer', route:'/', icon:'mdi-account-cash'},
-      { title: 'Ofertas nuevas', flex: 4, num:124, button:'Buscar ofertas', route:'/', icon:'mdi-briefcase' },
-      { title: 'Nuevos freelancer', flex: 4, num:9310, button:'Crear oferta', route:'/', icon:'mdi-newspaper-plus' }
+      { title: 'Nuevas ofertas disponibles', flex: 4, num:'', button:'Buscar trabajo', route:'Search', icon:'mdi-account-cash'},
+      { title: 'Nuevos freelancers registrados', flex: 4, num:'', button:'Crear ofertas', route:'Create', icon:'mdi-briefcase' },
+      { title: 'Ver como van mis postulaciones', flex: 4, num:'', button:'Mis postulaciones', route:'Postulations', icon:'mdi-newspaper-plus' }
     ],
   }),
 
   methods:{
-    navigateToAddPostulation() {
-      this.$router.push({name: '/search'});
+    navigateTo(string) {
+      this.$router.push({name: string});
     },
+
+
+
   }
 
 }

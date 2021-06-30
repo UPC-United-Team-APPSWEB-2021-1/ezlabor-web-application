@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="deep-purple lighten-5">
     <v-card-title>
       Offers
       <v-spacer></v-spacer>
