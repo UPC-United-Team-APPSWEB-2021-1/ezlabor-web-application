@@ -1,7 +1,5 @@
 <template>
-  <v-card>
-
-  </v-card>
+  <v-btn to="/login">GO TO LOGIN</v-btn>
 </template>
 
 <script>
