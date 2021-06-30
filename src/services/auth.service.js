@@ -42,19 +42,11 @@ class AuthService {
             username: user.username ,
             email: user.email ,
             password: user.password ,
-            subscription_active: user.subscription_active ,
             first_name: user.first_name ,
             last_name: user.last_name ,
-            birth_date: user.birth_date ,
-            description: user.description ,
-            phone: user.phone ,
-            personal_web: user.personal_web ,
-            register_date: user.register_date ,
-            district_id: user.district_id ,
+
             rating: user.rating ,
-            facebook_link: user.facebook_link ,
-            instagram_link: user.instagram_link ,
-            twitter_link: user.twitter_link,
+
             image_url: user.image_url ,
         });
     }
