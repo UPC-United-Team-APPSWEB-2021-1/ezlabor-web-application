@@ -18,7 +18,7 @@
 
             <v-list-item-content>
               <router-link to="/user">
-                <h3 class="align-end">Hello User1!</h3>
+                <h3 class="align-end" style="color: #2c2c2c">Hello User1!</h3>
               </router-link>
             </v-list-item-content>
 
