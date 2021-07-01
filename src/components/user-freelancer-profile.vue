@@ -21,7 +21,27 @@
           </v-list-item-content>
         </v-list-item>
 
+        <v-list-item>
+          <v-list-item-content>Email:</v-list-item-content>
+          <v-list-item-content class="align-end">
+            {{ user.birth_date}}
+          </v-list-item-content>
+        </v-list-item>
 
+        <v-list-item>
+          <v-list-item-content>Phone:</v-list-item-content>
+          <v-list-item-content class="align-end">
+            {{ user.phone}}
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item-content>Personal Web:</v-list-item-content>
+          <v-list-item-content class="align-end">
+            {{ user.personal_web}}
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-card-text>
 
   </v-card>
