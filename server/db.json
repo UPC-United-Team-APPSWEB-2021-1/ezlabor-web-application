@@ -70,7 +70,7 @@
       "id": 0,
       "offerId": 0,
       "freelancerId": 0,
-      "presentationMessage": "Hola contratenme p",
+      "presentationMessage": "Acepto su propuesta",
       "postulationDate": "Thu Jun 24 2021",
       "state": "Pending"
     },
@@ -78,7 +78,7 @@
       "id": 2,
       "offerId": 0,
       "freelancerId": 0,
-      "presentationMessage": "sdf",
+      "presentationMessage": "Me interesa su oferta",
       "postulationDate": "Thu Jun 24 2021",
       "state": "Pending"
     },
@@ -86,7 +86,7 @@
       "id": 3,
       "offerId": 0,
       "freelancerId": 0,
-      "presentationMessage": "dfghdgf",
+      "presentationMessage": "Necesito trabajo",
       "postulationDate": "Thu Jun 24 2021",
       "state": "Pending",
       "duration": "3"

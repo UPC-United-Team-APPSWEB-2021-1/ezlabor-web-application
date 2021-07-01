@@ -12,7 +12,7 @@
           Nombre
         </th>
         <th class="text-left">
-          Descripcion
+          Fecha
         </th>
         <th class="text-left">
           Estado
@@ -24,14 +24,14 @@
       </thead>
         <tbody>
         <tr
-            v-for="item in information"
+            v-for="item in postulations"
             :key="item.id"
         >
-          <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.state }}</td>
-          <td>{{ item.state }}</td>
+          <td class="text-left"> {{ item.id }}</td>
+          <td class="text-left">{{ item.presentationMessage }}</td>
+          <td class="text-left">{{ item.postulationDate }}</td>
+          <td class="text-left">{{ item.state }}</td>
+          <td class="text-left"> <v-btn @click="navigateToPostulations" color="deep-purple accent-2">Ver</v-btn></td>
 
         </tr>
         </tbody>
@@ -44,10 +44,15 @@
 </template>
 
 <script>
+import PostulationsApiService from "@/services/postulations-api.service";
+
 export default {
 name: "dashboard-table",
   data () {
     return {
+
+      postulations:[],
+
       information:[
           {id:1, name: 'UX Design', description: 'Busco empleado', state:'pending'},
         {id:2, name: 'UX Design', description: 'Busco empleado', state:'pending'},
@@ -57,6 +62,32 @@ name: "dashboard-table",
       ]
     }
   },
+
+  methods:{
+
+    retrievePostulations() {
+      PostulationsApiService.getAll()
+          .then(response => {
+            this.postulations = response.data;
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+    },
+    refreshList() {
+      this.retrievePostulations();
+    },
+
+    navigateToPostulations() {
+      this.$router.push({name: 'Postulations'});
+    },
+
+
+
+  },
+  mounted() {
+    this.retrievePostulations();
+  }
 }
 </script>
 
